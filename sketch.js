@@ -44,9 +44,7 @@ function draw() {
   mostraCarro2();
   mostraCarro3();
   movimentaAtor();
-  movimentaCarro1();
-  movimentaCarro2();
-  movimentaCarro3();
+  movimentaCarro();
 }
 
 function mostraAtor () {
