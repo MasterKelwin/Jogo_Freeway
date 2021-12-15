@@ -44,6 +44,9 @@ function draw() {
   mostraCarro2();
   mostraCarro3();
   movimentaAtor();
+  movimentaCarro1();
+  movimentaCarro2();
+  movimentaCarro3();
 }
 
 function mostraAtor () {
@@ -63,10 +66,22 @@ function mostraCarro1 () {
   image(carro1, xCarro1, yCarro1, wCarro, hCarro);
 }
 
+function movimentaCarro1 () {
+  xCarro1 -= 4
+}
+
 function mostraCarro2 () {
   image(carro2, xCarro2, yCarro2, wCarro, hCarro);
 }
 
+function movimentaCarro2 () {
+  xCarro2 -= 5
+}
+
 function mostraCarro3 () {
   image(carro3, xCarro3, yCarro3, wCarro, hCarro);
+}
+
+function movimentaCarro3 () {
+  xCarro3 -= 3
 }
