@@ -11,18 +11,10 @@ let wAtor = 30
 let hAtor = 30
 
 //variáveis do carro1
-let xCarro1 = 600
-let yCarro1 = 40
+let xCarros = [600, 600, 600]
+let yCarros = [40, 96, 150]
 let wCarro = 60
 let hCarro = 40
-
-//variáveis do carro2
-let xCarro2 = 600
-let yCarro2 = 96
-
-//variaveis do carro3
-let xCarro3 = 600
-let yCarro3 = 150
 
 
 function preload() {
@@ -31,6 +23,7 @@ function preload() {
   carro2 = loadImage("assets/carro-2.png");
   carro3 = loadImage("assets/carro-3.png");
   estrada = loadImage("assets/estrada.png");
+  imagemCarros = [carro1, carro2, carro3]
 }
 
 function setup() {
@@ -40,9 +33,7 @@ function setup() {
 function draw() {
   background(estrada);
   mostraAtor();
-  mostraCarro1();
-  mostraCarro2();
-  mostraCarro3();
+  mostraCarros();
   movimentaAtor();
   movimentaCarro();
   loopCarro();
@@ -62,33 +53,22 @@ function movimentaAtor () {
   }
 }
 
-function mostraCarro1 () {
-  image(carro1, xCarro1, yCarro1, wCarro, hCarro);
+function mostraCarros () {
+  for (let i = 0; i < imagemCarros.length; i = i + 1)
+  image(imagemCarros[i], xCarros[i], yCarros[i], wCarro, hCarro);
 }
 
-function mostraCarro2 () {
-  image(carro2, xCarro2, yCarro2, wCarro, hCarro);
-}
-
-function mostraCarro3 () {
-  image(carro3, xCarro3, yCarro3, wCarro, hCarro);
-}
 
 
 function movimentaCarro () {
-  xCarro1 -= 4 //velocidades
-  xCarro2 -= 5
-  xCarro3 -= 3
+  xCarros[0] -= 4 //velocidades
+  xCarros[1] -= 5
+  xCarros[2] -= 3
 }
 
 function loopCarro () {
-  if (xCarro1 < -80) {
-    xCarro1 = 600
-  }
-    if (xCarro2 < -80) {
-    xCarro2 = 600
-  }
-    if (xCarro3 < -80) {
-    xCarro3 = 600
+  for (let i = 0; i < imagemCarros.length; i = i + 1)
+  if (xCarros[i] < -80) {
+    xCarros[i] = 600
   }
 }
