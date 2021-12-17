@@ -10,12 +10,11 @@ let yAtor = 366
 let wAtor = 30
 let hAtor = 30
 
-//variáveis do carro1
+//variáveis dos carros
 let xCarros = [600, 600, 600]
 let yCarros = [40, 96, 150]
 let wCarro = 60
 let hCarro = 40
-
 
 function preload() {
   ator = loadImage("assets/ator-1.png");
@@ -57,8 +56,6 @@ function mostraCarros () {
   for (let i = 0; i < imagemCarros.length; i = i + 1)
   image(imagemCarros[i], xCarros[i], yCarros[i], wCarro, hCarro);
 }
-
-
 
 function movimentaCarro () {
   xCarros[0] -= 4 //velocidades
