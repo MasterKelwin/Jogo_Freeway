@@ -11,8 +11,8 @@ let wAtor = 30
 let hAtor = 30
 
 //variáveis dos carros
-let xCarros = [600, 600, 600]
-let yCarros = [40, 96, 150]
+let xCarros = [600, 600, 600, 600, 600, 600]
+let yCarros = [40, 96, 150, 210, 263, 320]
 let wCarro = 60
 let hCarro = 40
 
@@ -22,7 +22,7 @@ function preload() {
   carro2 = loadImage("assets/carro-2.png");
   carro3 = loadImage("assets/carro-3.png");
   estrada = loadImage("assets/estrada.png");
-  imagemCarros = [carro1, carro2, carro3]
+  imagemCarros = [carro1, carro2, carro3, carro2, carro3, carro1]
 }
 
 function setup() {
@@ -62,6 +62,9 @@ function movimentaCarro () {
   xCarros[0] -= 4 //velocidades
   xCarros[1] -= 5
   xCarros[2] -= 3
+  xCarros[3] -= 4
+  xCarros[4] -= 6
+  xCarros[5] -= 3
 }
 
 function loopCarro () {
