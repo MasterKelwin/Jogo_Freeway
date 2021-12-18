@@ -36,6 +36,7 @@ function draw() {
   movimentaAtor();
   movimentaCarro();
   loopCarro();
+  verificaColisao();
 
 }
 
@@ -53,7 +54,7 @@ function movimentaAtor () {
 }
 
 function mostraCarros () {
-  for (let i = 0; i < imagemCarros.length; i = i + 1)
+  for (let i = 0; i < imagemCarros.length; i++)  //i++ = i=i+1
   image(imagemCarros[i], xCarros[i], yCarros[i], wCarro, hCarro);
 }
 
@@ -64,8 +65,22 @@ function movimentaCarro () {
 }
 
 function loopCarro () {
-  for (let i = 0; i < imagemCarros.length; i = i + 1)
+  for (let i = 0; i < imagemCarros.length; i++) 
   if (xCarros[i] < -80) {
     xCarros[i] = 600
   }
+}
+
+function verificaColisao() {
+  //collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
+  for (let i = 0; i < imagemCarros.length; i++) {
+  colisao = collideRectCircle(xCarros[i], yCarros[i], wCarro, hCarro, xAtor, yAtor, 15) 
+    if (colisao) {
+      colidiu();
+    }
+  }
+}
+
+function colidiu() {
+  yAtor = 366
 }
