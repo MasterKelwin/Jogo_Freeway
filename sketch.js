@@ -27,10 +27,14 @@ function preload() {
   carro3 = loadImage("assets/carro-3.png");
   estrada = loadImage("assets/estrada.png");
   imagemCarros = [carro1, carro2, carro3, carro2, carro3, carro1]
+  somTrilha = loadSound("assets/trilha.mp3")
+  somColidiu = loadSound("assets/colidiu.mp3")
+  somPontos = loadSound("assets/pontos.wav")
 }
 
 function setup() {
   createCanvas(500, 400);
+  somTrilha.loop();
 }
 
 function draw() {
@@ -85,9 +89,10 @@ function loopCarro () {
 function verificaColisao() {
   //collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
   for (let i = 0; i < imagemCarros.length; i++) {
-  colisao = collideRectCircle(xCarros[i], yCarros[i], wCarro, hCarro, xAtor, yAtor, 15) 
+  colisao = collideRectCircle(xCarros[i], yCarros[i], wCarro, hCarro, xAtor, yAtor, 11) 
     if (colisao) {
       colidiu();
+      somColidiu.play();
       if (pontos > 0){
         pontos -= 1;
       }
@@ -110,6 +115,7 @@ function marcaPonto() {
   if (yAtor < 30) {
     pontos += 1;
     yAtor = 366;
+    somPontos.play();
   }
 }
 
