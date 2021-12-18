@@ -83,7 +83,9 @@ function verificaColisao() {
   colisao = collideRectCircle(xCarros[i], yCarros[i], wCarro, hCarro, xAtor, yAtor, 15) 
     if (colisao) {
       colidiu();
-      pontos -= 1;
+      if (pontos > 0){
+        pontos -= 1;
+      }
     }
   }
 }
