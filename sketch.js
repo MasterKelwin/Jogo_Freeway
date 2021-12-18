@@ -5,10 +5,11 @@ let carro3;
 let estrada;
 
 //variáveis do ator
-let xAtor = 80
+let xAtor = 85
 let yAtor = 366
 let wAtor = 30
 let hAtor = 30
+let pontos = 0
 
 //variáveis dos carros
 let xCarros = [600, 600, 600, 600, 600, 600]
@@ -37,6 +38,8 @@ function draw() {
   movimentaCarro();
   loopCarro();
   verificaColisao();
+  incluiPontos();
+  marcaPonto();
 
 }
 
@@ -86,4 +89,18 @@ function verificaColisao() {
 
 function colidiu() {
   yAtor = 366
+}
+
+function incluiPontos() {
+  textAlign(CENTER);
+  textSize(25);
+  text(pontos, width / 5, 27)
+  fill(color(255, 220, 100));
+}
+
+function marcaPonto() {
+  if (yAtor < 30) {
+    pontos += 1;
+    yAtor = 366;
+  }
 }
