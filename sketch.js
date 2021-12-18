@@ -3,6 +3,9 @@ let carro1;
 let carro2;
 let carro3;
 let estrada;
+let somTrilha;
+let somColidiu;
+let somPontos;
 
 //variáveis do ator
 let xAtor = 85
@@ -52,7 +55,9 @@ function movimentaAtor () {
     yAtor -= 3
   }
   if(keyIsDown(DOWN_ARROW)) {
-    yAtor += 3
+    if (podeSeMover()) {
+      yAtor += 3
+    }
   }
 }
 
@@ -106,4 +111,8 @@ function marcaPonto() {
     pontos += 1;
     yAtor = 366;
   }
+}
+
+function podeSeMover() {
+  return yAtor < 366;
 }
