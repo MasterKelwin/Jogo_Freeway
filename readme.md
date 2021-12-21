@@ -14,3 +14,7 @@ Funções
     Trilha de fundo
     
     Marcação com condições
+
+    Multiplayer
+
+    Código resoluto
