@@ -122,3 +122,23 @@ function marcaPonto() {
 function podeSeMover() {
   return yAtor < 366;
 }
+
+ if(this._collideDebug || calcIntersection){
+      var intersectionX = x1 + (uA * (x2-x1));
+      var intersectionY = y1 + (uA * (y2-y1));
+    }
+
+    if(this._collideDebug){
+      this.ellipse(intersectionX,intersectionY,10,10);
+    }
+
+    if(calcIntersection){
+      intersection = {
+        "x":intersectionX,
+        "y":intersectionY
+      }
+      return intersection;
+    }else{
+      return true;
+    }
+  }
